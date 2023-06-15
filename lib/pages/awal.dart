@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:marisanif21a/pages/loginpage.dart';
-import "LoginPage.dart";
 class awal extends StatelessWidget {
   const awal({super.key});
 
@@ -12,7 +10,7 @@ class awal extends StatelessWidget {
           Container(
           padding: EdgeInsets.all(20),
           child: Image.asset(
-          "assets/images/Group 12795.png",
+          "asset/images/Group 12795.png",
           height: 365,
           width: 375,
           alignment: Alignment.center,
@@ -62,13 +60,13 @@ class awal extends StatelessWidget {
                 // Font Belum Diubah ke "ROBOTO" dan FontSize BOLD
                 onPressed: () {
                   // Gunakan Cara Agar Button Ini pindah Menuju Ke Halaman Login Page
-                  Navigator.push(
-                  context,
+                 // Navigator.push(
+                  //context,
                   //Pemanggilan Halaman Berikutnya dibagian INI
-                   MaterialPageRoute(builder: (context) => //LoginPage()),
+                  // MaterialPageRoute(builder: (context) => //LoginPage()),
                   //Lakukan Masukan Nilai Dari Page Login Kelas Turunan Dari Pagenya dan Jangan Lupa Lakukan Import Page dengan
                   //Lakukan Klik di Bagian => import.
-                  );
+                 // );
                 }
                 ),
               ),
