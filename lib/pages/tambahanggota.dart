@@ -51,7 +51,7 @@ class _tambahanggotaState extends State<tambahanggota> {
       title:Text("TAMBAHKAN ANGGOTA", style: TextStyle(color: Colors.white),),
       centerTitle: true,
       backgroundColor: Color.fromRGBO(20, 177, 158, 1),
-      iconTheme: IconThemeData(color: Colors.black),
+      iconTheme: IconThemeData(color: Colors.white),
       leading: IconButton(
         icon: Icon(Icons.arrow_back),
         onPressed: () {
