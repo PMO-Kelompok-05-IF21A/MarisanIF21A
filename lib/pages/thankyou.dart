@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:marisanif21a/pages/login.dart';
 
 class terimakasih extends StatelessWidget {
   const terimakasih({super.key});
@@ -32,10 +33,10 @@ class terimakasih extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () {
-                        /*Navigator.push(
+                        Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => LoginPage()));
-                          */
+                      
                       },
                      child:  Text("Masuk", style:  TextStyle(fontSize: 15, fontFamily: 'Roboto', color: Colors.blue),)
                      )
