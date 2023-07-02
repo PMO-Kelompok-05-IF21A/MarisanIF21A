@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:marisanif21a/pages/login.dart';
 class awal extends StatelessWidget {
   const awal({super.key});
 
@@ -59,14 +60,14 @@ class awal extends StatelessWidget {
                 child: Center(child: Text("OPEN")),
                 // Font Belum Diubah ke "ROBOTO" dan FontSize BOLD
                 onPressed: () {
-                  // Gunakan Cara Agar Button Ini pindah Menuju Ke Halaman Login Page
-                 // Navigator.push(
-                  //context,
-                  //Pemanggilan Halaman Berikutnya dibagian INI
-                  // MaterialPageRoute(builder: (context) => //LoginPage()),
+                  //Gunakan Cara Agar Button Ini pindah Menuju Ke Halaman Login Page
+                 Navigator.push(
+                 context,
+                //Pemanggilan Halaman Berikutnya dibagian INI
+                 MaterialPageRoute(builder: (context) => LoginPage()),
                   //Lakukan Masukan Nilai Dari Page Login Kelas Turunan Dari Pagenya dan Jangan Lupa Lakukan Import Page dengan
                   //Lakukan Klik di Bagian => import.
-                 // );
+                 );
                 }
                 ),
               ),

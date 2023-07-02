@@ -1,14 +1,32 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:marisanif21a/pages/home.dart';
 
-String Nama = "JEFRI";
+String Nama = "";
 
 class bayar extends StatelessWidget {
    bayar({super.key});
-    final TextEditingController Namabayar = TextEditingController();
+  final FirebaseFirestore firestore = FirebaseFirestore.instance;
+  final TextEditingController Namabayar = TextEditingController();
   final TextEditingController hargabayar = TextEditingController();
+  void createbayar() async {
+    String _namabayar = Namabayar.text;
+    String _hargabayar = hargabayar.text;
+    await firestore.collection('Bayar').doc().set({
+      "Nama Anggota": _namabayar,
+      "Nominal Arisan": _hargabayar,
+    });
+  }
+  void creattransaksi() async {
+    String _namabayar = Namabayar.text;
+    String _hargabayar = hargabayar.text;
+    await firestore.collection('Transaksi').doc().set({
+      "Nama Anggota": _namabayar,
+      "Nominal Arisan": _hargabayar,
+    });
+  }
 
   @override
-
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -20,7 +38,7 @@ class bayar extends StatelessWidget {
         children: <Widget>[
           Container(
           child: Image.asset(
-          "assets/images/bayar.png",
+         "asset/images/bayar.png",
           height: 283,
           width: 255,
           alignment: Alignment.center,
@@ -71,13 +89,13 @@ class bayar extends StatelessWidget {
                       ),
                       child: Center(child: Text("BAYAR")),
                       onPressed: () {
-                       // if (onUpdate != null) onUpdate();
-                       // Untuk Masuk Pada Menu Homo
-                     /* Navigator.push(
+                       createbayar();
+                       creattransaksi();
+                      Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => home()), 
+                      MaterialPageRoute(builder: (context) => HomePage()), 
                       // Disini Lakukan Algoritma Untuk Memasukan Nilai
-                      ); */
+                      ); 
                     }  
                    ),
                  ),
@@ -95,11 +113,11 @@ class bayar extends StatelessWidget {
                       ),
                       child: Center(child: Text("LEWATI")),
                       onPressed: () {
-                     /* Navigator.push(
+                      Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => home()),
+                      MaterialPageRoute(builder: (context) => HomePage()),
                       // Disini Lakukan Algoritma Untuk Memasukan Nilai
-                      ); */
+                      ); 
                     }  
                    ),
                  ),

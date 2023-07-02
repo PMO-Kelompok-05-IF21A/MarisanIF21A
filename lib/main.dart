@@ -1,6 +1,15 @@
+import 'dart:core';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:marisanif21a/pages/awal.dart';
-void main() {
+import 'package:marisanif21a/pages/login.dart';
+import 'auth/firebase_options.dart';
+ // Lakukan Comint Pada Sign UP dan LOgin kesluruhan Baik Itu Firebase Op
+void main()  async {
+  WidgetsFlutterBinding.ensureInitialized();
+   Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
   runApp(const MyApp());
 }
 
