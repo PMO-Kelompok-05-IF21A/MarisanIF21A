@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "1023013249912",
+    "project_id": "marisanapp-33310",
+    "storage_bucket": "marisanapp-33310.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1023013249912:android:324c38ffea444635de1e8d",
+        "android_client_info": {
+          "package_name": "com.MarisanApp.marisanif21a"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1023013249912-e15g34stbh2fe0d3479be71pipc9s3kl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuDfyrgf1eo6DL_tyA4vBdoelyGQj-gVo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1023013249912-e15g34stbh2fe0d3479be71pipc9s3kl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1023013249912:android:c3be90aea80d110ade1e8d",
+        "android_client_info": {
+          "package_name": "com.example.marisanif21a"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1023013249912-e15g34stbh2fe0d3479be71pipc9s3kl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuDfyrgf1eo6DL_tyA4vBdoelyGQj-gVo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1023013249912-e15g34stbh2fe0d3479be71pipc9s3kl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
