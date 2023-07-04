@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:marisanif21a/pages/Home.dart';
 import 'package:marisanif21a/pages/Login.dart';
+import 'package:marisanif21a/pages/login.dart';
+
 
 class terimakasih extends StatelessWidget {
   terimakasih({super.key});
@@ -61,7 +63,6 @@ class terimakasih extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => LoginPage()));
-                        
                       },
                      child:  Text("Masuk", style:  TextStyle(fontSize: 15, fontFamily: 'Roboto', color: Colors.blue),)
                      )
