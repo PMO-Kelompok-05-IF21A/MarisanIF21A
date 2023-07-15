@@ -59,7 +59,7 @@ class _tambahanggotaState extends State<tambahanggota> {
           SizedBox(height: 50),
           Container(
           child: Image.asset(
-          "assets/images/tambahanggota.png",
+          "assets/images/tambahanggota.jpeg",
           height: 200,
           width: 200,
           alignment: Alignment.center,

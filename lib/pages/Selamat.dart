@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class congrat extends StatelessWidget {
-  const congrat({super.key});
+  const congrat({super.key, required String selectedName});
 
   @override
   Widget build(BuildContext context) {
