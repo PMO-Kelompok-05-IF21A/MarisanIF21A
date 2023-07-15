@@ -11,7 +11,7 @@ class awal extends StatelessWidget {
           Container(
           padding: EdgeInsets.all(20),
           child: Image.asset(
-          "assets/images/Group 12795.png",
+          "assets/images/Group_12795.png",
           height: 365,
           width: 375,
           alignment: Alignment.center,

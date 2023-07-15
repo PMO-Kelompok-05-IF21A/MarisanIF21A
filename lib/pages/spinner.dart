@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_fortune_wheel/flutter_fortune_wheel.dart';
-import 'package:marisan_pmo_project/Pages/selamatMenang.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:marisanif21a/pages/Selamat.dart';
 

@@ -21,7 +21,7 @@ class terimakasih extends StatelessWidget {
             children: [
               SizedBox(height: 222,),
               Image.asset(
-                "asset/images/tick.png"
+                "assets/images/tick.png"
                 ,
                  width: 150, height: 150,),
               SizedBox(height: 38,),
