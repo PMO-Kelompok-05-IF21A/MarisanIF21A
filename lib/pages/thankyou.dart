@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:marisanif21a/pages/Home.dart';
 import 'package:marisanif21a/pages/Login.dart';
-import 'package:marisanif21a/pages/login.dart';
+
 
 
 class terimakasih extends StatelessWidget {
@@ -46,7 +46,7 @@ class terimakasih extends StatelessWidget {
                       onPrimary: Colors.white,
                     ),
                   child: Center(child: Text("Home")),
-                  onPressed: () { Navigator.push(context,MaterialPageRoute(builder: (context) => Homepage())
+                  onPressed: () { Navigator.push(context,MaterialPageRoute(builder: (context) => HomePage())
                   );
                   }
                   ),
