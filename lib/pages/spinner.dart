@@ -2,8 +2,8 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_fortune_wheel/flutter_fortune_wheel.dart';
+import 'package:marisan_pmo_project/Pages/selamatMenang.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_fortune_wheel/flutter_fortune_wheel.dart';
 import 'package:marisanif21a/pages/Selamat.dart';
 
 class spiner extends StatefulWidget {
@@ -34,15 +34,21 @@ class _spinerState extends State<spiner> {
     selected.close();
     super.dispose();
   }
-Future<void> fetchItemsFromFirestore() async {
+ Future<void> fetchItemsFromFirestore() async {
     try {
       QuerySnapshot snapshot = await FirebaseFirestore.instance
           .collection('Data Spinner')
           .get();
 
       setState(() {
-        items = snapshot.docs.map((doc) => doc['Nama']as String).toList();
+        items = snapshot.docs.map((doc) => doc['Nama'] as String).toList();
       });
+
+      if (items.length >= 2) {
+        selected.add(Fortune.randomInt(0, items.length));
+      } else {
+        throw Exception('Tidak Dapat Memutar Spinner');
+      }
     } catch (error) {
       print('Error fetching items: $error');
     }
@@ -68,32 +74,41 @@ Future<void> fetchItemsFromFirestore() async {
 
   @override
   Widget build(BuildContext context) {
-    
+    FirebaseFirestore firestore = FirebaseFirestore.instance;
     return Scaffold(
       appBar: AppBar(
-        title: Text('MARISAN'),
-        ),
-        body: SafeArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Expanded(
-                child: Container(
-                  width: 300,
-                  height: 300,
-                  child: FortuneWheel(
-                  selected: selected.stream,
-                  items: [
-                    for (var it in items) FortuneItem(child: Text(it)),
-                  ],
-               ),
-                ),
-              // Baru
-              )
-            ]
+        backgroundColor: Color.fromRGBO(20, 177, 158, 1),
+        title: const Center(
+          child: Text(
+            "MARISAN SPINNER",
+            style: TextStyle(color: Colors.white),
           ),
         ),
+      ),
+        body:SafeArea(
+          child: Center(
+            child: Container(
+              width: 300,
+              height: 300,
+              child: items.length >= 2
+                  ? FortuneWheel(
+                  animateFirst: false,
+                      selected: selected.stream,
+                      items: [
+                        for (var it in items) FortuneItem(child: Text(it)),
+                      ],
+                    )
+                  : Text('MAAF TIDAK ADA ANGGOTA YANG TERDAFTAR',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontFamily: "Roboto",
+                        color:(Color.fromRGBO(20, 177, 158, 1)),
+                          ),
+                      textAlign: TextAlign.start,
+                      textDirection: TextDirection.ltr,),
+            ),
+          ),
+          ),
        floatingActionButton: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -107,47 +122,33 @@ Future<void> fetchItemsFromFirestore() async {
                   ), 
                   child: Center(child: Text("SPIN")),
                   onPressed: (){
-                    if (!isSpinning) {
+                      if (!isSpinning && items.length > 1) {
                       setState(() {
                         isSpinning = true;
                       });
-                    Timer(Duration(seconds: 1), () {
-                      setState(() {
-                        int selectedIndex = Fortune.randomInt(0, items.length);
-                        selected.add(selectedIndex);
-                        selectedName = items[selectedIndex];
-                        isSpinning = false;
-                        Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => congrat(selectedName: selectedName),// error pemanggilann isi dari Spinner SelectedNamed
-                        ),
-                        );
+                      Timer(Duration(seconds: 1), () {
+                        setState(() {
+                          int selectedIndex = Fortune.randomInt(0, items.length);
+                          selected.add(selectedIndex);
+                          selectedName = items[selectedIndex];
+                          isSpinning = false;
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => congrat(selectedName: selectedName),
+                            ),
+                          );
+                          firestore.collection('Data Menang').add({
+                           'selectedName': selectedName,
+                             });
+                        });
                       });
-                    });
+                     }
                     }
-                   // Navigator.push(context,
-                    //MaterialPageRoute(builder: (context) => congrat()),
-                    //);
-                  },
                   ),  
                 ),
               ),
-              Padding(padding: const EdgeInsets.only(left: 20, right:30),
-              child: Container(
-                height: 40,
-                width: 140,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(primary: Color.fromRGBO(20, 177, 158, 1),
-                  onPrimary: Colors.white,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))
-                ), 
 
-                child: Center(child: Text("MENANG")),
-                onPressed:(){
-
-                },
-              ),
-            ),
-          ),
           ],
           ), 
        );
