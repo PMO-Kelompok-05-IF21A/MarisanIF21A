@@ -4,7 +4,7 @@ import 'package:marisanif21a/pages/bayar.dart';
 import 'package:marisanif21a/pages/home.dart';
 import 'package:marisanif21a/pages/recordbayar.dart';
 import 'package:marisanif21a/pages/tambahanggota.dart';
-// ini Harusnya perbaikan
+// ini Harusnya perbaikan Hall
 class DaftarAnggota extends StatefulWidget {
   const DaftarAnggota({Key? key}) : super(key: key);
 
