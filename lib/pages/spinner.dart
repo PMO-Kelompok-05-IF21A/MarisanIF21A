@@ -30,7 +30,7 @@ class _spinerState extends State<spiner> {
 @override
   void dispose() {
     // TODO: implement dispose
-    selected.close();
+    selected.close(); 
     super.dispose();
   }
  Future<void> fetchItemsFromFirestore() async {
